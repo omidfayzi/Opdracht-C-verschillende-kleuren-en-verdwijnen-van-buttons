@@ -8,15 +8,22 @@ for (var i = 1; i <= 30; i++) {
 };
 
 var colorChoice = ["red", "purple", "blue", "black"];
-	colorIndex = 0;
+var colorIndex  = 0;
+
 
 document.querySelector("#container").addEventListener("click", function(e) {
 	var selectedButton = e.target;
-	selectedButton.style.backgroundColor = colorChoice[colorIndex];
-	colorIndex = (colorIndex + 1) % colorChoice.length
 	console.log(selectedButton);
-
-	});	 
+	selectedButton.style.backgroundColor = colorChoice[colorIndex];
+	colorIndex = (colorIndex +1) % colorChoice.length;
+		
+		if (colorIndex == 3) {
+		var selectedButton = e.target;
+		selectedButton.style.display = "none";
+		}
+}); 
+	
+	
 
 
 
